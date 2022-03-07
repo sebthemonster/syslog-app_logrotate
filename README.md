@@ -15,6 +15,20 @@ These values must be written in `logs.env` file if you use docker-compose.yml ex
 
 * A docker-compose file is given as example to publish rails logs to a logs data platform with sharing logs between docker containers through named volume.
 
+## Syslog-ng configuration to parse rails files
+This configuration 
+* parses in same time rails 2 AND rails 3 logs.
+* parses logs to a logs data platform in LTSV with line delimiter
+
+Due to this configuration, some environment variables are mandatory :
+* token-name : the name of the token to 
+* server-token : your token to push logs
+* server-url
+* server-port
+* rails2-log-file : path to rails 2 app logs from /var/log/app
+* rails3-log-file : path to rails 2 app logs from /var/log/app
+* program : a string should contain the name of your app
+
 ## FROM balabit/syslog-ng README
 
 * Syslog-ng is installed with all of its modules
