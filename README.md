@@ -3,9 +3,17 @@ A Docker syslog-ng image with logrotate configuration on all app logs in /var/lo
 
 Image build from [official syslog-ng image](https://registry.hub.docker.com/r/balabit/syslog-ng) or [GitHub page](https://github.com/syslog-ng/syslog-ng/tree/master/docker).
 
-* A syslog-ng configuration file to parse ruby on rails logs is present in syslog-ng.conf directory.
+* A syslog-ng configuration file to parse ruby on rails logs to ltsv logs is present in syslog-ng.conf directory : rails.conf file.
+  
+This configuration use environment variables to set project specific values like tokens, url to logs data platform, port, log file paths...
+
+The log file paths in .env file must be relative to /var/log/app directory.
+
+These values must be written in `logs.env` file if you use docker-compose.yml example file.
+
 * All log files *.log in /var/log/app directory will be automatically rotated according to configuration file logrotate.d/app
-* A docker-compose file is given as example to share logs between docker containers with named volume.
+
+* A docker-compose file is given as example to publish rails logs to a logs data platform with sharing logs between docker containers through named volume.
 
 ## FROM balabit/syslog-ng README
 
