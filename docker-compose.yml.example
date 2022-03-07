@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  syslog-ng:
+    build: .
+    image: syslogng-app_logrotate:latest
+    container_name: syslog-ng
+    volumes:
+      - ./syslog-ng.conf/rails.conf:/etc/syslog-ng/syslog-ng.conf
+      #- rails3-logs:/var/log/app/rails3-app
+      #- rails2-logs:/var/log/app/rails2-app
+
+volumes:
+  #rails3-logs:
+    #name: rails3-logs
+    #external: true
+  #rails2-logs:
+    #name: rails2-logs
+    #external: true
