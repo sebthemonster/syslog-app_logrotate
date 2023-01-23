@@ -15,7 +15,7 @@ These values must be written in `logs.env` file if you use docker-compose.yml ex
 
 * A docker-compose file is given as example to publish rails logs to a logs data platform with sharing logs between docker containers through named volume.
 
-* in file `syslog-ng.conf/app_rails.conf`, bind to `/etc/syslog-ng/syslog-ng.conf`, you will find example of destination for logs : network or file destination to test your configuration.
+* in file `syslog-ng.conf/app_rails.conf`, bind to `/etc/syslog-ng/syslog-ng.conf` in docker-compose file, you will find example of destination for logs : network or file destination to test your configuration.
 
 ## Syslog-ng configuration to parse rails files
 This configuration 
